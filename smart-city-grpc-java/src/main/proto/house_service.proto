@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package untitled;
+
+option go_package = "pb";
+option java_package = "com.example";
+option java_multiple_files = true;
+
+import "house_message.proto";
+
+message CreateHouseRequest {House house =1; }
+
+message CreateHouseResponse { string id =1; }
+
+service HouseService {
+
+  rpc CreateHouse(CreateHouseRequest) returns (CreateHouseResponse) {};
+
+}
