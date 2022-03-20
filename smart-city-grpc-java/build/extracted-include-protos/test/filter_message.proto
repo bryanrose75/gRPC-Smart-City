@@ -1,11 +1,15 @@
 syntax = "proto3";
 
-package proto;
+package untitled;
 
 option go_package = "pb";
 option java_package = "com.example";
 option java_multiple_files = true;
 
-import "google/protobuf/timestamp.proto";
+//import "";
 
+message Filter{
+ // double max_
+  double max_energy_used = 1;
 
+}

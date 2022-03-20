@@ -17,8 +17,9 @@ private static final long serialVersionUID = 0L;
   }
   private House() {
     id_ = "";
-    brand_ = "";
+    district_ = "";
     name_ = "";
+    dublinArea_ = "";
   }
 
   @java.lang.Override
@@ -60,13 +61,24 @@ private static final long serialVersionUID = 0L;
           case 18: {
             java.lang.String s = input.readStringRequireUtf8();
 
-            brand_ = s;
+            district_ = s;
             break;
           }
           case 26: {
             java.lang.String s = input.readStringRequireUtf8();
 
             name_ = s;
+            break;
+          }
+          case 34: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            dublinArea_ = s;
+            break;
+          }
+          case 41: {
+
+            energyUsed_ = input.readDouble();
             break;
           }
           case 81: {
@@ -203,38 +215,38 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int BRAND_FIELD_NUMBER = 2;
-  private volatile java.lang.Object brand_;
+  public static final int DISTRICT_FIELD_NUMBER = 2;
+  private volatile java.lang.Object district_;
   /**
-   * <code>string brand = 2;</code>
-   * @return The brand.
+   * <code>string district = 2;</code>
+   * @return The district.
    */
   @java.lang.Override
-  public java.lang.String getBrand() {
-    java.lang.Object ref = brand_;
+  public java.lang.String getDistrict() {
+    java.lang.Object ref = district_;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      brand_ = s;
+      district_ = s;
       return s;
     }
   }
   /**
-   * <code>string brand = 2;</code>
-   * @return The bytes for brand.
+   * <code>string district = 2;</code>
+   * @return The bytes for district.
    */
   @java.lang.Override
   public com.google.protobuf.ByteString
-      getBrandBytes() {
-    java.lang.Object ref = brand_;
+      getDistrictBytes() {
+    java.lang.Object ref = district_;
     if (ref instanceof java.lang.String) {
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
               (java.lang.String) ref);
-      brand_ = b;
+      district_ = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -277,6 +289,55 @@ private static final long serialVersionUID = 0L;
     } else {
       return (com.google.protobuf.ByteString) ref;
     }
+  }
+
+  public static final int DUBLINAREA_FIELD_NUMBER = 4;
+  private volatile java.lang.Object dublinArea_;
+  /**
+   * <code>string dublinArea = 4;</code>
+   * @return The dublinArea.
+   */
+  @java.lang.Override
+  public java.lang.String getDublinArea() {
+    java.lang.Object ref = dublinArea_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      dublinArea_ = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string dublinArea = 4;</code>
+   * @return The bytes for dublinArea.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getDublinAreaBytes() {
+    java.lang.Object ref = dublinArea_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      dublinArea_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int ENERGY_USED_FIELD_NUMBER = 5;
+  private double energyUsed_;
+  /**
+   * <code>double energy_used = 5;</code>
+   * @return The energyUsed.
+   */
+  @java.lang.Override
+  public double getEnergyUsed() {
+    return energyUsed_;
   }
 
   public static final int SIZE_SQFEET_FIELD_NUMBER = 10;
@@ -364,11 +425,17 @@ private static final long serialVersionUID = 0L;
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(id_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, id_);
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(brand_)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, brand_);
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(district_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, district_);
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, name_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(dublinArea_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, dublinArea_);
+    }
+    if (java.lang.Double.doubleToRawLongBits(energyUsed_) != 0) {
+      output.writeDouble(5, energyUsed_);
     }
     if (sizeCase_ == 10) {
       output.writeDouble(
@@ -393,11 +460,18 @@ private static final long serialVersionUID = 0L;
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(id_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, id_);
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(brand_)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, brand_);
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(district_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, district_);
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, name_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(dublinArea_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, dublinArea_);
+    }
+    if (java.lang.Double.doubleToRawLongBits(energyUsed_) != 0) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeDoubleSize(5, energyUsed_);
     }
     if (sizeCase_ == 10) {
       size += com.google.protobuf.CodedOutputStream
@@ -430,10 +504,15 @@ private static final long serialVersionUID = 0L;
 
     if (!getId()
         .equals(other.getId())) return false;
-    if (!getBrand()
-        .equals(other.getBrand())) return false;
+    if (!getDistrict()
+        .equals(other.getDistrict())) return false;
     if (!getName()
         .equals(other.getName())) return false;
+    if (!getDublinArea()
+        .equals(other.getDublinArea())) return false;
+    if (java.lang.Double.doubleToLongBits(getEnergyUsed())
+        != java.lang.Double.doubleToLongBits(
+            other.getEnergyUsed())) return false;
     if (hasUpdatedAt() != other.hasUpdatedAt()) return false;
     if (hasUpdatedAt()) {
       if (!getUpdatedAt()
@@ -467,10 +546,15 @@ private static final long serialVersionUID = 0L;
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + ID_FIELD_NUMBER;
     hash = (53 * hash) + getId().hashCode();
-    hash = (37 * hash) + BRAND_FIELD_NUMBER;
-    hash = (53 * hash) + getBrand().hashCode();
+    hash = (37 * hash) + DISTRICT_FIELD_NUMBER;
+    hash = (53 * hash) + getDistrict().hashCode();
     hash = (37 * hash) + NAME_FIELD_NUMBER;
     hash = (53 * hash) + getName().hashCode();
+    hash = (37 * hash) + DUBLINAREA_FIELD_NUMBER;
+    hash = (53 * hash) + getDublinArea().hashCode();
+    hash = (37 * hash) + ENERGY_USED_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+        java.lang.Double.doubleToLongBits(getEnergyUsed()));
     if (hasUpdatedAt()) {
       hash = (37 * hash) + UPDATED_AT_FIELD_NUMBER;
       hash = (53 * hash) + getUpdatedAt().hashCode();
@@ -624,9 +708,13 @@ private static final long serialVersionUID = 0L;
       super.clear();
       id_ = "";
 
-      brand_ = "";
+      district_ = "";
 
       name_ = "";
+
+      dublinArea_ = "";
+
+      energyUsed_ = 0D;
 
       if (updatedAtBuilder_ == null) {
         updatedAt_ = null;
@@ -663,8 +751,10 @@ private static final long serialVersionUID = 0L;
     public com.example.House buildPartial() {
       com.example.House result = new com.example.House(this);
       result.id_ = id_;
-      result.brand_ = brand_;
+      result.district_ = district_;
       result.name_ = name_;
+      result.dublinArea_ = dublinArea_;
+      result.energyUsed_ = energyUsed_;
       if (sizeCase_ == 10) {
         result.size_ = size_;
       }
@@ -729,13 +819,20 @@ private static final long serialVersionUID = 0L;
         id_ = other.id_;
         onChanged();
       }
-      if (!other.getBrand().isEmpty()) {
-        brand_ = other.brand_;
+      if (!other.getDistrict().isEmpty()) {
+        district_ = other.district_;
         onChanged();
       }
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
         onChanged();
+      }
+      if (!other.getDublinArea().isEmpty()) {
+        dublinArea_ = other.dublinArea_;
+        onChanged();
+      }
+      if (other.getEnergyUsed() != 0D) {
+        setEnergyUsed(other.getEnergyUsed());
       }
       if (other.hasUpdatedAt()) {
         mergeUpdatedAt(other.getUpdatedAt());
@@ -873,78 +970,78 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private java.lang.Object brand_ = "";
+    private java.lang.Object district_ = "";
     /**
-     * <code>string brand = 2;</code>
-     * @return The brand.
+     * <code>string district = 2;</code>
+     * @return The district.
      */
-    public java.lang.String getBrand() {
-      java.lang.Object ref = brand_;
+    public java.lang.String getDistrict() {
+      java.lang.Object ref = district_;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        brand_ = s;
+        district_ = s;
         return s;
       } else {
         return (java.lang.String) ref;
       }
     }
     /**
-     * <code>string brand = 2;</code>
-     * @return The bytes for brand.
+     * <code>string district = 2;</code>
+     * @return The bytes for district.
      */
     public com.google.protobuf.ByteString
-        getBrandBytes() {
-      java.lang.Object ref = brand_;
+        getDistrictBytes() {
+      java.lang.Object ref = district_;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        brand_ = b;
+        district_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
     }
     /**
-     * <code>string brand = 2;</code>
-     * @param value The brand to set.
+     * <code>string district = 2;</code>
+     * @param value The district to set.
      * @return This builder for chaining.
      */
-    public Builder setBrand(
+    public Builder setDistrict(
         java.lang.String value) {
       if (value == null) {
     throw new NullPointerException();
   }
   
-      brand_ = value;
+      district_ = value;
       onChanged();
       return this;
     }
     /**
-     * <code>string brand = 2;</code>
+     * <code>string district = 2;</code>
      * @return This builder for chaining.
      */
-    public Builder clearBrand() {
+    public Builder clearDistrict() {
       
-      brand_ = getDefaultInstance().getBrand();
+      district_ = getDefaultInstance().getDistrict();
       onChanged();
       return this;
     }
     /**
-     * <code>string brand = 2;</code>
-     * @param value The bytes for brand to set.
+     * <code>string district = 2;</code>
+     * @param value The bytes for district to set.
      * @return This builder for chaining.
      */
-    public Builder setBrandBytes(
+    public Builder setDistrictBytes(
         com.google.protobuf.ByteString value) {
       if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
       
-      brand_ = value;
+      district_ = value;
       onChanged();
       return this;
     }
@@ -1021,6 +1118,113 @@ private static final long serialVersionUID = 0L;
   checkByteStringIsUtf8(value);
       
       name_ = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object dublinArea_ = "";
+    /**
+     * <code>string dublinArea = 4;</code>
+     * @return The dublinArea.
+     */
+    public java.lang.String getDublinArea() {
+      java.lang.Object ref = dublinArea_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        dublinArea_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>string dublinArea = 4;</code>
+     * @return The bytes for dublinArea.
+     */
+    public com.google.protobuf.ByteString
+        getDublinAreaBytes() {
+      java.lang.Object ref = dublinArea_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        dublinArea_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string dublinArea = 4;</code>
+     * @param value The dublinArea to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDublinArea(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      dublinArea_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string dublinArea = 4;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearDublinArea() {
+      
+      dublinArea_ = getDefaultInstance().getDublinArea();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string dublinArea = 4;</code>
+     * @param value The bytes for dublinArea to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDublinAreaBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      dublinArea_ = value;
+      onChanged();
+      return this;
+    }
+
+    private double energyUsed_ ;
+    /**
+     * <code>double energy_used = 5;</code>
+     * @return The energyUsed.
+     */
+    @java.lang.Override
+    public double getEnergyUsed() {
+      return energyUsed_;
+    }
+    /**
+     * <code>double energy_used = 5;</code>
+     * @param value The energyUsed to set.
+     * @return This builder for chaining.
+     */
+    public Builder setEnergyUsed(double value) {
+      
+      energyUsed_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>double energy_used = 5;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearEnergyUsed() {
+      
+      energyUsed_ = 0D;
       onChanged();
       return this;
     }

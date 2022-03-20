@@ -20,16 +20,16 @@ public interface HouseOrBuilder extends
       getIdBytes();
 
   /**
-   * <code>string brand = 2;</code>
-   * @return The brand.
+   * <code>string district = 2;</code>
+   * @return The district.
    */
-  java.lang.String getBrand();
+  java.lang.String getDistrict();
   /**
-   * <code>string brand = 2;</code>
-   * @return The bytes for brand.
+   * <code>string district = 2;</code>
+   * @return The bytes for district.
    */
   com.google.protobuf.ByteString
-      getBrandBytes();
+      getDistrictBytes();
 
   /**
    * <code>string name = 3;</code>
@@ -42,6 +42,24 @@ public interface HouseOrBuilder extends
    */
   com.google.protobuf.ByteString
       getNameBytes();
+
+  /**
+   * <code>string dublinArea = 4;</code>
+   * @return The dublinArea.
+   */
+  java.lang.String getDublinArea();
+  /**
+   * <code>string dublinArea = 4;</code>
+   * @return The bytes for dublinArea.
+   */
+  com.google.protobuf.ByteString
+      getDublinAreaBytes();
+
+  /**
+   * <code>double energy_used = 5;</code>
+   * @return The energyUsed.
+   */
+  double getEnergyUsed();
 
   /**
    * <code>double size_sqfeet = 10;</code>

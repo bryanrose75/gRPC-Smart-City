@@ -24,6 +24,16 @@ public final class HouseServiceOuterClass {
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_untitled_CreateHouseResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_untitled_SearchHouseRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_untitled_SearchHouseRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_untitled_SearchHouseResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_untitled_SearchHouseResponse_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -34,17 +44,23 @@ public final class HouseServiceOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\023house_service.proto\022\010untitled\032\023house_m" +
-      "essage.proto\"4\n\022CreateHouseRequest\022\036\n\005ho" +
-      "use\030\001 \001(\0132\017.untitled.House\"!\n\023CreateHous" +
-      "eResponse\022\n\n\002id\030\001 \001(\t2\\\n\014HouseService\022L\n" +
-      "\013CreateHouse\022\034.untitled.CreateHouseReque" +
-      "st\032\035.untitled.CreateHouseResponse\"\000B\023\n\013c" +
-      "om.exampleP\001Z\002pbb\006proto3"
+      "essage.proto\032\024filter_message.proto\"4\n\022Cr" +
+      "eateHouseRequest\022\036\n\005house\030\001 \001(\0132\017.untitl" +
+      "ed.House\"!\n\023CreateHouseResponse\022\n\n\002id\030\001 " +
+      "\001(\t\"6\n\022SearchHouseRequest\022 \n\006filter\030\001 \001(" +
+      "\0132\020.untitled.Filter\"5\n\023SearchHouseRespon" +
+      "se\022\036\n\005house\030\001 \001(\0132\017.untitled.House2\254\001\n\014H" +
+      "ouseService\022L\n\013CreateHouse\022\034.untitled.Cr" +
+      "eateHouseRequest\032\035.untitled.CreateHouseR" +
+      "esponse\"\000\022N\n\013SearchHouse\022\034.untitled.Sear" +
+      "chHouseRequest\032\035.untitled.SearchHouseRes" +
+      "ponse\"\0000\001B\023\n\013com.exampleP\001Z\002pbb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
           com.example.HouseMessage.getDescriptor(),
+          com.example.FilterMessage.getDescriptor(),
         });
     internal_static_untitled_CreateHouseRequest_descriptor =
       getDescriptor().getMessageTypes().get(0);
@@ -58,7 +74,20 @@ public final class HouseServiceOuterClass {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_untitled_CreateHouseResponse_descriptor,
         new java.lang.String[] { "Id", });
+    internal_static_untitled_SearchHouseRequest_descriptor =
+      getDescriptor().getMessageTypes().get(2);
+    internal_static_untitled_SearchHouseRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_untitled_SearchHouseRequest_descriptor,
+        new java.lang.String[] { "Filter", });
+    internal_static_untitled_SearchHouseResponse_descriptor =
+      getDescriptor().getMessageTypes().get(3);
+    internal_static_untitled_SearchHouseResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_untitled_SearchHouseResponse_descriptor,
+        new java.lang.String[] { "House", });
     com.example.HouseMessage.getDescriptor();
+    com.example.FilterMessage.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

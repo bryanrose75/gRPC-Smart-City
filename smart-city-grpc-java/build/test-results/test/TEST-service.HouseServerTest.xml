@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="service.HouseServerTest" tests="4" skipped="0" failures="0" errors="0" timestamp="2022-03-19T16:31:28" hostname="Bryan-James-Roses-MacBook-Pro.local" time="0.766">
+  <properties/>
+  <testcase name="createHouseWithAnAlreadyExistsID" classname="service.HouseServerTest" time="0.735"/>
+  <testcase name="createHouseWithEmptyID" classname="service.HouseServerTest" time="0.014"/>
+  <testcase name="createHouseWithInvalidID" classname="service.HouseServerTest" time="0.006"/>
+  <testcase name="createHouseWithValidID" classname="service.HouseServerTest" time="0.01"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[Mar 19, 2022 4:31:28 PM service.HouseServer start
+INFO: server started on port: 0
+Mar 19, 2022 4:31:28 PM service.unaryHouseService createHouse
+INFO: Got a create-house request with ID: 96050658-e0a5-438e-8b5f-936318a41f46
+Mar 19, 2022 4:31:28 PM service.HouseServer start
+INFO: server started on port: 0
+Mar 19, 2022 4:31:28 PM service.unaryHouseService createHouse
+INFO: Got a create-house request with ID: 
+Mar 19, 2022 4:31:28 PM service.unaryHouseService createHouse
+INFO: saved House with ID: 16fc9143-027f-4547-b3f2-5fa38ed93df4
+Mar 19, 2022 4:31:28 PM service.HouseServer start
+INFO: server started on port: 0
+Mar 19, 2022 4:31:28 PM service.unaryHouseService createHouse
+INFO: Got a create-house request with ID: Invalid
+Mar 19, 2022 4:31:28 PM service.HouseServer start
+INFO: server started on port: 0
+Mar 19, 2022 4:31:28 PM service.unaryHouseService createHouse
+INFO: Got a create-house request with ID: e32ed2a2-260d-4edd-96ad-889f9cb7a6d7
+Mar 19, 2022 4:31:28 PM service.unaryHouseService createHouse
+INFO: saved House with ID: e32ed2a2-260d-4edd-96ad-889f9cb7a6d7
+]]></system-err>
+</testsuite>

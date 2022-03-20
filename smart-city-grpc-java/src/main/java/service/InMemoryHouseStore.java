@@ -1,7 +1,9 @@
 package service;
 
+import com.example.Filter;
 import com.example.House;
 
+import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentMap;
 
@@ -14,7 +16,7 @@ public class InMemoryHouseStore implements HouseStore{
     }
 
     @Override
-    public void save(House house) throws Exception {
+    public void Save(House house) throws Exception {
         //Check if the House ID is already in the store of not
         if (data.containsKey(house.getId())){
             // if it is we throw an "Already Exists Exception" and define it in a seperate file
@@ -38,5 +40,23 @@ public class InMemoryHouseStore implements HouseStore{
 
         //Otherwise deep copy the object from the map
 
+    }
+
+    @Override
+    public void Search(Filter filter, HouseStream stream) {
+        //Use a loop to iterate through all elements of the data in the map
+        for (Map.Entry<String, House> entry: data.entrySet()){
+            House house = entry.getValue();
+            if (isQualified(filter, house)){
+                stream.Send(house.toBuilder().build());
+            }
+        }
+    }
+
+    private boolean isQualified(Filter filter, House house) {
+        if (house.getEnergyUsed() > filter.getMaxEnergyUsed()){
+            return false;
+        }
+        return true;
     }
 }

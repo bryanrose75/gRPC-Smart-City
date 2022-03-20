@@ -46,6 +46,37 @@ public final class HouseServiceGrpc {
     return getCreateHouseMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<com.example.SearchHouseRequest,
+      com.example.SearchHouseResponse> getSearchHouseMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "SearchHouse",
+      requestType = com.example.SearchHouseRequest.class,
+      responseType = com.example.SearchHouseResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.SERVER_STREAMING)
+  public static io.grpc.MethodDescriptor<com.example.SearchHouseRequest,
+      com.example.SearchHouseResponse> getSearchHouseMethod() {
+    io.grpc.MethodDescriptor<com.example.SearchHouseRequest, com.example.SearchHouseResponse> getSearchHouseMethod;
+    if ((getSearchHouseMethod = HouseServiceGrpc.getSearchHouseMethod) == null) {
+      synchronized (HouseServiceGrpc.class) {
+        if ((getSearchHouseMethod = HouseServiceGrpc.getSearchHouseMethod) == null) {
+          HouseServiceGrpc.getSearchHouseMethod = getSearchHouseMethod =
+              io.grpc.MethodDescriptor.<com.example.SearchHouseRequest, com.example.SearchHouseResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.SERVER_STREAMING)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "SearchHouse"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.example.SearchHouseRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.example.SearchHouseResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new HouseServiceMethodDescriptorSupplier("SearchHouse"))
+              .build();
+        }
+      }
+    }
+    return getSearchHouseMethod;
+  }
+
   /**
    * Creates a new async stub that supports all call types for the service
    */
@@ -101,6 +132,13 @@ public final class HouseServiceGrpc {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getCreateHouseMethod(), responseObserver);
     }
 
+    /**
+     */
+    public void searchHouse(com.example.SearchHouseRequest request,
+        io.grpc.stub.StreamObserver<com.example.SearchHouseResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getSearchHouseMethod(), responseObserver);
+    }
+
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
@@ -110,6 +148,13 @@ public final class HouseServiceGrpc {
                 com.example.CreateHouseRequest,
                 com.example.CreateHouseResponse>(
                   this, METHODID_CREATE_HOUSE)))
+          .addMethod(
+            getSearchHouseMethod(),
+            io.grpc.stub.ServerCalls.asyncServerStreamingCall(
+              new MethodHandlers<
+                com.example.SearchHouseRequest,
+                com.example.SearchHouseResponse>(
+                  this, METHODID_SEARCH_HOUSE)))
           .build();
     }
   }
@@ -135,6 +180,14 @@ public final class HouseServiceGrpc {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getCreateHouseMethod(), getCallOptions()), request, responseObserver);
     }
+
+    /**
+     */
+    public void searchHouse(com.example.SearchHouseRequest request,
+        io.grpc.stub.StreamObserver<com.example.SearchHouseResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncServerStreamingCall(
+          getChannel().newCall(getSearchHouseMethod(), getCallOptions()), request, responseObserver);
+    }
   }
 
   /**
@@ -156,6 +209,14 @@ public final class HouseServiceGrpc {
     public com.example.CreateHouseResponse createHouse(com.example.CreateHouseRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getCreateHouseMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public java.util.Iterator<com.example.SearchHouseResponse> searchHouse(
+        com.example.SearchHouseRequest request) {
+      return io.grpc.stub.ClientCalls.blockingServerStreamingCall(
+          getChannel(), getSearchHouseMethod(), getCallOptions(), request);
     }
   }
 
@@ -183,6 +244,7 @@ public final class HouseServiceGrpc {
   }
 
   private static final int METHODID_CREATE_HOUSE = 0;
+  private static final int METHODID_SEARCH_HOUSE = 1;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -204,6 +266,10 @@ public final class HouseServiceGrpc {
         case METHODID_CREATE_HOUSE:
           serviceImpl.createHouse((com.example.CreateHouseRequest) request,
               (io.grpc.stub.StreamObserver<com.example.CreateHouseResponse>) responseObserver);
+          break;
+        case METHODID_SEARCH_HOUSE:
+          serviceImpl.searchHouse((com.example.SearchHouseRequest) request,
+              (io.grpc.stub.StreamObserver<com.example.SearchHouseResponse>) responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -267,6 +333,7 @@ public final class HouseServiceGrpc {
           serviceDescriptor = result = io.grpc.ServiceDescriptor.newBuilder(SERVICE_NAME)
               .setSchemaDescriptor(new HouseServiceFileDescriptorSupplier())
               .addMethod(getCreateHouseMethod())
+              .addMethod(getSearchHouseMethod())
               .build();
         }
       }

@@ -11,13 +11,13 @@ import "google/protobuf/timestamp.proto";
 
 message House {
     string id = 1;
-    string brand = 2;
+    string district = 2;
     string name = 3;
-    oneof weight {
-        double weight_kg = 10;
-        double weight_lb = 11;
+    string dublinArea = 4;
+    double energy_used = 5;
+    oneof size {
+        double size_sqfeet = 10;
+        double stories = 11;
     }
-    double price_usd = 12;
-    uint32 release_year = 13;
-    google.protobuf.Timestamp updated_at = 14;
+    google.protobuf.Timestamp updated_at = 12;
 }

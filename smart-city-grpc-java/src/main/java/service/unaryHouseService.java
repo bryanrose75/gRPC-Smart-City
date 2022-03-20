@@ -1,6 +1,7 @@
 package service;
 
 import com.example.*;
+import io.grpc.Context;
 import io.grpc.Status;
 import io.grpc.stub.StreamObserver;
 
@@ -46,13 +47,31 @@ public class unaryHouseService extends HouseServiceGrpc.HouseServiceImplBase {
                 return;
             }
         }
+        //Heavy Processing
+//        try {
+//            TimeUnit.SECONDS.sleep(6);
+//        } catch (InterruptedException e) {
+//            e.printStackTrace();
+//        }
+
+        if (Context.current().isCancelled()) {
+            logger.info("Request has been cancelled");
+            responseObserver.onError(
+                    Status.CANCELLED
+                    .withDescription("request is canelled")
+                    .asRuntimeException()
+            );
+            return;
+        }
+
+
         // IF all goes well we shall have a valid House ID
         // Convert the house into a builder so that we can use a set of functions to set the ID
         House other = house.toBuilder().setId(uuid.toString()).build();
 
         //Save other House to an in memory storage
         try {
-            store.save(other);
+            store.Save(other);
         }
         catch(AlreadyExistsException e){
             responseObserver.onError(
@@ -74,5 +93,23 @@ public class unaryHouseService extends HouseServiceGrpc.HouseServiceImplBase {
         responseObserver.onCompleted(); // Use to tell the client that the RPC has completed
 
         logger.info("saved House with ID: " + other.getId());
+    }
+
+    @Override
+    public void searchHouse(SearchHouseRequest request, StreamObserver<SearchHouseResponse> responseObserver) {
+        Filter filter = request.getFilter();
+        logger.info("Got a search House request with the filter:\n" + filter);
+
+        store.Search(filter, new HouseStream() {
+            @Override
+            public void Send(House house) {
+                logger.info("Found a House with ID: " + house.getId());
+                SearchHouseResponse response = SearchHouseResponse.newBuilder().setHouse(house).build();
+                responseObserver.onNext(response);
+            }
+        });
+
+        responseObserver.onCompleted();
+        logger.info("Search house completed");
     }
 }

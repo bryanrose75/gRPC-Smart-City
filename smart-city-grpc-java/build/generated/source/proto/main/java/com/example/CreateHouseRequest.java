@@ -4,6 +4,10 @@
 package com.example;
 
 /**
+ * <pre>
+ *For unary gRPC
+ * </pre>
+ *
  * Protobuf type {@code untitled.CreateHouseRequest}
  */
 public final class CreateHouseRequest extends
@@ -280,6 +284,10 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
+   * <pre>
+   *For unary gRPC
+   * </pre>
+   *
    * Protobuf type {@code untitled.CreateHouseRequest}
    */
   public static final class Builder extends

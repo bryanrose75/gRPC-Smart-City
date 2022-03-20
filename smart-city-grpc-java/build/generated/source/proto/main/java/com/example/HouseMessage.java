@@ -29,12 +29,13 @@ public final class HouseMessage {
   static {
     java.lang.String[] descriptorData = {
       "\n\023house_message.proto\022\010untitled\032\037google/" +
-      "protobuf/timestamp.proto\"\222\001\n\005House\022\n\n\002id" +
-      "\030\001 \001(\t\022\r\n\005brand\030\002 \001(\t\022\014\n\004name\030\003 \001(\t\022\025\n\013s" +
-      "ize_sqfeet\030\n \001(\001H\000\022\021\n\007stories\030\013 \001(\001H\000\022.\n" +
-      "\nupdated_at\030\014 \001(\0132\032.google.protobuf.Time" +
-      "stampB\006\n\004sizeB\023\n\013com.exampleP\001Z\002pbb\006prot" +
-      "o3"
+      "protobuf/timestamp.proto\"\276\001\n\005House\022\n\n\002id" +
+      "\030\001 \001(\t\022\020\n\010district\030\002 \001(\t\022\014\n\004name\030\003 \001(\t\022\022" +
+      "\n\ndublinArea\030\004 \001(\t\022\023\n\013energy_used\030\005 \001(\001\022" +
+      "\025\n\013size_sqfeet\030\n \001(\001H\000\022\021\n\007stories\030\013 \001(\001H" +
+      "\000\022.\n\nupdated_at\030\014 \001(\0132\032.google.protobuf." +
+      "TimestampB\006\n\004sizeB\023\n\013com.exampleP\001Z\002pbb\006" +
+      "proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -46,7 +47,7 @@ public final class HouseMessage {
     internal_static_untitled_House_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_untitled_House_descriptor,
-        new java.lang.String[] { "Id", "Brand", "Name", "SizeSqfeet", "Stories", "UpdatedAt", "Size", });
+        new java.lang.String[] { "Id", "District", "Name", "DublinArea", "EnergyUsed", "SizeSqfeet", "Stories", "UpdatedAt", "Size", });
     com.google.protobuf.TimestampProto.getDescriptor();
   }
 
