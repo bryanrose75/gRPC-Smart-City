@@ -34,6 +34,21 @@ public final class HouseServiceOuterClass {
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_untitled_SearchHouseResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_untitled_UploadImageRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_untitled_UploadImageRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_untitled_ImageInfo_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_untitled_ImageInfo_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_untitled_UploadImageResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_untitled_UploadImageResponse_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -49,12 +64,19 @@ public final class HouseServiceOuterClass {
       "ed.House\"!\n\023CreateHouseResponse\022\n\n\002id\030\001 " +
       "\001(\t\"6\n\022SearchHouseRequest\022 \n\006filter\030\001 \001(" +
       "\0132\020.untitled.Filter\"5\n\023SearchHouseRespon" +
-      "se\022\036\n\005house\030\001 \001(\0132\017.untitled.House2\254\001\n\014H" +
-      "ouseService\022L\n\013CreateHouse\022\034.untitled.Cr" +
-      "eateHouseRequest\032\035.untitled.CreateHouseR" +
-      "esponse\"\000\022N\n\013SearchHouse\022\034.untitled.Sear" +
-      "chHouseRequest\032\035.untitled.SearchHouseRes" +
-      "ponse\"\0000\001B\023\n\013com.exampleP\001Z\002pbb\006proto3"
+      "se\022\036\n\005house\030\001 \001(\0132\017.untitled.House\"W\n\022Up" +
+      "loadImageRequest\022#\n\004info\030\001 \001(\0132\023.untitle" +
+      "d.ImageInfoH\000\022\024\n\nchunk_data\030\002 \001(\014H\000B\006\n\004d" +
+      "ata\"1\n\tImageInfo\022\020\n\010house_id\030\001 \001(\t\022\022\n\nim" +
+      "age_type\030\002 \001(\t\"/\n\023UploadImageResponse\022\n\n" +
+      "\002id\030\001 \001(\t\022\014\n\004size\030\002 \001(\r2\374\001\n\014HouseService" +
+      "\022L\n\013CreateHouse\022\034.untitled.CreateHouseRe" +
+      "quest\032\035.untitled.CreateHouseResponse\"\000\022N" +
+      "\n\013SearchHouse\022\034.untitled.SearchHouseRequ" +
+      "est\032\035.untitled.SearchHouseResponse\"\0000\001\022N" +
+      "\n\013UploadIMage\022\034.untitled.UploadImageRequ" +
+      "est\032\035.untitled.UploadImageResponse\"\000(\001B\023" +
+      "\n\013com.exampleP\001Z\002pbb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -86,6 +108,24 @@ public final class HouseServiceOuterClass {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_untitled_SearchHouseResponse_descriptor,
         new java.lang.String[] { "House", });
+    internal_static_untitled_UploadImageRequest_descriptor =
+      getDescriptor().getMessageTypes().get(4);
+    internal_static_untitled_UploadImageRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_untitled_UploadImageRequest_descriptor,
+        new java.lang.String[] { "Info", "ChunkData", "Data", });
+    internal_static_untitled_ImageInfo_descriptor =
+      getDescriptor().getMessageTypes().get(5);
+    internal_static_untitled_ImageInfo_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_untitled_ImageInfo_descriptor,
+        new java.lang.String[] { "HouseId", "ImageType", });
+    internal_static_untitled_UploadImageResponse_descriptor =
+      getDescriptor().getMessageTypes().get(6);
+    internal_static_untitled_UploadImageResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_untitled_UploadImageResponse_descriptor,
+        new java.lang.String[] { "Id", "Size", });
     com.example.HouseMessage.getDescriptor();
     com.example.FilterMessage.getDescriptor();
   }

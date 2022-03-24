@@ -100,7 +100,7 @@ public class unaryHouseService extends HouseServiceGrpc.HouseServiceImplBase {
         Filter filter = request.getFilter();
         logger.info("Got a search House request with the filter:\n" + filter);
 
-        store.Search(filter, new HouseStream() {
+        store.Search(Context.current(), filter, new HouseStream() {
             @Override
             public void Send(House house) {
                 logger.info("Found a House with ID: " + house.getId());

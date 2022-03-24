@@ -66,33 +66,26 @@ public class HouseClient {
         logger.info("Search Has started");
 
         SearchHouseRequest request = SearchHouseRequest.newBuilder().setFilter(filter).build();
-        Iterator<SearchHouseResponse> responseIterator = blockingStub.searchHouse(request);
-        while (responseIterator.hasNext()){
-            SearchHouseResponse response = responseIterator.next();
-            House house = response.getHouse();
-            logger.info("-- Found " + house.getId());
+
+        try {
+            Iterator<SearchHouseResponse> responseIterator = blockingStub
+                    .withDeadlineAfter(5, TimeUnit.SECONDS)
+                    .searchHouse(request);
+
+            while (responseIterator.hasNext()){
+                SearchHouseResponse response = responseIterator.next();
+                House house = response.getHouse();
+                logger.info("-- Found " + house.getId());
+            }
+        }catch (Exception e){
+            logger.log(Level.SEVERE, "request has failed: " + e.getMessage());
+            return;
         }
+
         logger.info("Search has completed");
 
     }
-//Unary House client
 
-
-//    public static void main(String[] args) throws InterruptedException {
-//        //create a new client that connects to port 8080
-//        HouseClient client = new HouseClient("0.0.0.0", 8080);
-//
-//        Generator generator = new Generator();
-//        House house = generator.NewHouse().toBuilder().setId("").build();
-//
-//        try {
-//
-//            client.createHouse(house);
-//        } finally {
-//            client.shutdown();
-//        }
-//    }
-//}
 // Server side streaming client
     public static void main(String[] args) throws InterruptedException {
         //create a new client that connects to port 8080

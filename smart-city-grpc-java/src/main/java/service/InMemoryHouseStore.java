@@ -2,14 +2,19 @@ package service;
 
 import com.example.Filter;
 import com.example.House;
+import io.grpc.Context;
 
+import java.sql.Time;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentMap;
+import java.util.concurrent.TimeUnit;
+import java.util.logging.Logger;
 
 public class InMemoryHouseStore implements HouseStore{
     //use a concurrent map in order to store the Houses ID
     private ConcurrentMap<String, House> data;
+    private static final Logger logger = Logger.getLogger(InMemoryHouseStore.class.getName());
 
     public InMemoryHouseStore(){
         data = new ConcurrentHashMap<>(0);
@@ -43,9 +48,19 @@ public class InMemoryHouseStore implements HouseStore{
     }
 
     @Override
-    public void Search(Filter filter, HouseStream stream) {
+    public void Search(Context ctx, Filter filter, HouseStream stream)  {
         //Use a loop to iterate through all elements of the data in the map
         for (Map.Entry<String, House> entry: data.entrySet()){
+            if (ctx.isCancelled()){
+                logger.info("Context has been cancelled");
+                return;
+            }
+            try {
+                TimeUnit.SECONDS.sleep(1);
+            }catch (InterruptedException e){
+                e.printStackTrace();
+            }
+
             House house = entry.getValue();
             if (isQualified(filter, house)){
                 stream.Send(house.toBuilder().build());

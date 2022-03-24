@@ -3,6 +3,10 @@ package com.example;
 import static io.grpc.MethodDescriptor.generateFullMethodName;
 
 /**
+ * <pre>
+ *Declare the Grpc types
+ *Build to generate the code
+ * </pre>
  */
 @javax.annotation.Generated(
     value = "by gRPC proto compiler (version 1.45.0)",
@@ -77,6 +81,37 @@ public final class HouseServiceGrpc {
     return getSearchHouseMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<com.example.UploadImageRequest,
+      com.example.UploadImageResponse> getUploadIMageMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UploadIMage",
+      requestType = com.example.UploadImageRequest.class,
+      responseType = com.example.UploadImageResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.CLIENT_STREAMING)
+  public static io.grpc.MethodDescriptor<com.example.UploadImageRequest,
+      com.example.UploadImageResponse> getUploadIMageMethod() {
+    io.grpc.MethodDescriptor<com.example.UploadImageRequest, com.example.UploadImageResponse> getUploadIMageMethod;
+    if ((getUploadIMageMethod = HouseServiceGrpc.getUploadIMageMethod) == null) {
+      synchronized (HouseServiceGrpc.class) {
+        if ((getUploadIMageMethod = HouseServiceGrpc.getUploadIMageMethod) == null) {
+          HouseServiceGrpc.getUploadIMageMethod = getUploadIMageMethod =
+              io.grpc.MethodDescriptor.<com.example.UploadImageRequest, com.example.UploadImageResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.CLIENT_STREAMING)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "UploadIMage"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.example.UploadImageRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.example.UploadImageResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new HouseServiceMethodDescriptorSupplier("UploadIMage"))
+              .build();
+        }
+      }
+    }
+    return getUploadIMageMethod;
+  }
+
   /**
    * Creates a new async stub that supports all call types for the service
    */
@@ -122,10 +157,17 @@ public final class HouseServiceGrpc {
   }
 
   /**
+   * <pre>
+   *Declare the Grpc types
+   *Build to generate the code
+   * </pre>
    */
   public static abstract class HouseServiceImplBase implements io.grpc.BindableService {
 
     /**
+     * <pre>
+     *Unary Grpc
+     * </pre>
      */
     public void createHouse(com.example.CreateHouseRequest request,
         io.grpc.stub.StreamObserver<com.example.CreateHouseResponse> responseObserver) {
@@ -133,10 +175,23 @@ public final class HouseServiceGrpc {
     }
 
     /**
+     * <pre>
+     *Server Side streaming Grpc
+     * </pre>
      */
     public void searchHouse(com.example.SearchHouseRequest request,
         io.grpc.stub.StreamObserver<com.example.SearchHouseResponse> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getSearchHouseMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
+     *Client Side Streaming Grpc
+     * </pre>
+     */
+    public io.grpc.stub.StreamObserver<com.example.UploadImageRequest> uploadIMage(
+        io.grpc.stub.StreamObserver<com.example.UploadImageResponse> responseObserver) {
+      return io.grpc.stub.ServerCalls.asyncUnimplementedStreamingCall(getUploadIMageMethod(), responseObserver);
     }
 
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
@@ -155,11 +210,22 @@ public final class HouseServiceGrpc {
                 com.example.SearchHouseRequest,
                 com.example.SearchHouseResponse>(
                   this, METHODID_SEARCH_HOUSE)))
+          .addMethod(
+            getUploadIMageMethod(),
+            io.grpc.stub.ServerCalls.asyncClientStreamingCall(
+              new MethodHandlers<
+                com.example.UploadImageRequest,
+                com.example.UploadImageResponse>(
+                  this, METHODID_UPLOAD_IMAGE)))
           .build();
     }
   }
 
   /**
+   * <pre>
+   *Declare the Grpc types
+   *Build to generate the code
+   * </pre>
    */
   public static final class HouseServiceStub extends io.grpc.stub.AbstractAsyncStub<HouseServiceStub> {
     private HouseServiceStub(
@@ -174,6 +240,9 @@ public final class HouseServiceGrpc {
     }
 
     /**
+     * <pre>
+     *Unary Grpc
+     * </pre>
      */
     public void createHouse(com.example.CreateHouseRequest request,
         io.grpc.stub.StreamObserver<com.example.CreateHouseResponse> responseObserver) {
@@ -182,15 +251,33 @@ public final class HouseServiceGrpc {
     }
 
     /**
+     * <pre>
+     *Server Side streaming Grpc
+     * </pre>
      */
     public void searchHouse(com.example.SearchHouseRequest request,
         io.grpc.stub.StreamObserver<com.example.SearchHouseResponse> responseObserver) {
       io.grpc.stub.ClientCalls.asyncServerStreamingCall(
           getChannel().newCall(getSearchHouseMethod(), getCallOptions()), request, responseObserver);
     }
+
+    /**
+     * <pre>
+     *Client Side Streaming Grpc
+     * </pre>
+     */
+    public io.grpc.stub.StreamObserver<com.example.UploadImageRequest> uploadIMage(
+        io.grpc.stub.StreamObserver<com.example.UploadImageResponse> responseObserver) {
+      return io.grpc.stub.ClientCalls.asyncClientStreamingCall(
+          getChannel().newCall(getUploadIMageMethod(), getCallOptions()), responseObserver);
+    }
   }
 
   /**
+   * <pre>
+   *Declare the Grpc types
+   *Build to generate the code
+   * </pre>
    */
   public static final class HouseServiceBlockingStub extends io.grpc.stub.AbstractBlockingStub<HouseServiceBlockingStub> {
     private HouseServiceBlockingStub(
@@ -205,6 +292,9 @@ public final class HouseServiceGrpc {
     }
 
     /**
+     * <pre>
+     *Unary Grpc
+     * </pre>
      */
     public com.example.CreateHouseResponse createHouse(com.example.CreateHouseRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
@@ -212,6 +302,9 @@ public final class HouseServiceGrpc {
     }
 
     /**
+     * <pre>
+     *Server Side streaming Grpc
+     * </pre>
      */
     public java.util.Iterator<com.example.SearchHouseResponse> searchHouse(
         com.example.SearchHouseRequest request) {
@@ -221,6 +314,10 @@ public final class HouseServiceGrpc {
   }
 
   /**
+   * <pre>
+   *Declare the Grpc types
+   *Build to generate the code
+   * </pre>
    */
   public static final class HouseServiceFutureStub extends io.grpc.stub.AbstractFutureStub<HouseServiceFutureStub> {
     private HouseServiceFutureStub(
@@ -235,6 +332,9 @@ public final class HouseServiceGrpc {
     }
 
     /**
+     * <pre>
+     *Unary Grpc
+     * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.example.CreateHouseResponse> createHouse(
         com.example.CreateHouseRequest request) {
@@ -245,6 +345,7 @@ public final class HouseServiceGrpc {
 
   private static final int METHODID_CREATE_HOUSE = 0;
   private static final int METHODID_SEARCH_HOUSE = 1;
+  private static final int METHODID_UPLOAD_IMAGE = 2;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -281,6 +382,9 @@ public final class HouseServiceGrpc {
     public io.grpc.stub.StreamObserver<Req> invoke(
         io.grpc.stub.StreamObserver<Resp> responseObserver) {
       switch (methodId) {
+        case METHODID_UPLOAD_IMAGE:
+          return (io.grpc.stub.StreamObserver<Req>) serviceImpl.uploadIMage(
+              (io.grpc.stub.StreamObserver<com.example.UploadImageResponse>) responseObserver);
         default:
           throw new AssertionError();
       }
@@ -334,6 +438,7 @@ public final class HouseServiceGrpc {
               .setSchemaDescriptor(new HouseServiceFileDescriptorSupplier())
               .addMethod(getCreateHouseMethod())
               .addMethod(getSearchHouseMethod())
+              .addMethod(getUploadIMageMethod())
               .build();
         }
       }

@@ -19,10 +19,30 @@ message SearchHouseRequest {Filter filter = 1;}
 
 message SearchHouseResponse {House house = 1;}
 
-service HouseService {
-
-  rpc CreateHouse(CreateHouseRequest) returns (CreateHouseResponse) {};
-  rpc SearchHouse(SearchHouseRequest) returns (stream SearchHouseResponse){
-
+//For Client Side Streaming
+message UploadImageRequest {
+  oneof data{
+    ImageInfo info = 1;
+    bytes chunk_data= 2;  //divide the image into multiple chunks
   };
+}
+
+message ImageInfo {
+  string house_id = 1;
+  string image_type = 2; //jpeg or png
+}
+
+message UploadImageResponse {
+  string id = 1;
+  uint32 size = 2;
+}
+//Declare the Grpc types
+//Build to generate the code
+service HouseService {
+  //Unary Grpc
+  rpc CreateHouse(CreateHouseRequest) returns (CreateHouseResponse) {};
+  //Server Side streaming Grpc
+  rpc SearchHouse(SearchHouseRequest) returns (stream SearchHouseResponse){};
+  //Client Side Streaming Grpc
+  rpc UploadIMage(stream UploadImageRequest) returns (UploadImageResponse) {};
 }
