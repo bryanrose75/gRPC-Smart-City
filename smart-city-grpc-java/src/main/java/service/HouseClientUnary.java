@@ -7,13 +7,12 @@ import io.grpc.Status;
 import io.grpc.StatusRuntimeException;
 import sample.Generator;
 
-import java.util.Iterator;
 import java.util.concurrent.TimeUnit;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
 public class HouseClientUnary {
-    private static final Logger logger = Logger.getLogger(HouseClient.class.getName());
+    private static final Logger logger = Logger.getLogger(HouseClientServerStreaming.class.getName());
 
     //To connect to the server we need to use a manage Channel object
     private final ManagedChannel channel;
@@ -58,17 +57,14 @@ public class HouseClientUnary {
             return;
         }
         //Create an info log to return the House ID
-        logger.info("House Created with ID: " + response.getId());
-
-
+        logger.info("House Created SmartCity network with ID: " + response.getId());
     }
 
 //Unary House client
 
-
     public static void main(String[] args) throws InterruptedException {
         //create a new client that connects to port 8080
-        HouseClient client = new HouseClient("0.0.0.0", 8080);
+        HouseClientServerStreaming client = new HouseClientServerStreaming("0.0.0.0", 8080);
 
         Generator generator = new Generator();
         House house = generator.NewHouse().toBuilder().setId("").build();

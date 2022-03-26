@@ -1,9 +1,9 @@
 package service;
 
-import com.example.HouseServiceGrpc;
 import io.grpc.Server;
 import io.grpc.ServerBuilder;
 
+import javax.swing.*;
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 import java.util.logging.Logger;
@@ -16,15 +16,16 @@ public class HouseServer {
     private final Server server;
 
     //write two constructors 1. a port and 2. a House Store as input
-    public HouseServer(int port, HouseStore store){
-        this(ServerBuilder.forPort(port), port, store);
+    public HouseServer(int port, HouseStore houseStore, ImageStore imageStore){
+        this(ServerBuilder.forPort(port), port, houseStore, imageStore);
     }
 
     // Take a gRPC server builder as the second input
     // useful for unit testing
-    public  HouseServer(ServerBuilder serverBuilder, int port, HouseStore store){
+    public  HouseServer(ServerBuilder serverBuilder, int port, HouseStore houseStore, ImageStore imageStore){
         this.port = port;
-        unaryHouseService houseService = new unaryHouseService(store);
+        HouseService houseService = new HouseService(houseStore, imageStore);
+      //  HouseService houseService1 = new HouseService(imageStore)
         server = serverBuilder.addService(houseService).build(); //apply to build to start the gRPC server
     }
     //create a function to start the server
@@ -61,10 +62,15 @@ public class HouseServer {
 
     //Create the main function
     public static void main(String[] args) throws InterruptedException, IOException {
-        InMemoryHouseStore store = new InMemoryHouseStore();
-        HouseServer server = new HouseServer(8080, store); //Initialise the Server on port 8080
+        InMemoryHouseStore houseStore = new InMemoryHouseStore();
+        DiskImageStore imageStore = new DiskImageStore("img");
+
+
+        HouseServer server = new HouseServer(8080, houseStore, imageStore); //Initialise the Server on port 8080
         server.start(); // call this function to start the server
         server.blockUntilShutdown();
+
+        JOptionPane.showMessageDialog(null, "Message" );
 
     }
 }

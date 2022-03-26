@@ -82,34 +82,34 @@ public final class HouseServiceGrpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<com.example.UploadImageRequest,
-      com.example.UploadImageResponse> getUploadIMageMethod;
+      com.example.UploadImageResponse> getUploadImageMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "UploadIMage",
+      fullMethodName = SERVICE_NAME + '/' + "UploadImage",
       requestType = com.example.UploadImageRequest.class,
       responseType = com.example.UploadImageResponse.class,
       methodType = io.grpc.MethodDescriptor.MethodType.CLIENT_STREAMING)
   public static io.grpc.MethodDescriptor<com.example.UploadImageRequest,
-      com.example.UploadImageResponse> getUploadIMageMethod() {
-    io.grpc.MethodDescriptor<com.example.UploadImageRequest, com.example.UploadImageResponse> getUploadIMageMethod;
-    if ((getUploadIMageMethod = HouseServiceGrpc.getUploadIMageMethod) == null) {
+      com.example.UploadImageResponse> getUploadImageMethod() {
+    io.grpc.MethodDescriptor<com.example.UploadImageRequest, com.example.UploadImageResponse> getUploadImageMethod;
+    if ((getUploadImageMethod = HouseServiceGrpc.getUploadImageMethod) == null) {
       synchronized (HouseServiceGrpc.class) {
-        if ((getUploadIMageMethod = HouseServiceGrpc.getUploadIMageMethod) == null) {
-          HouseServiceGrpc.getUploadIMageMethod = getUploadIMageMethod =
+        if ((getUploadImageMethod = HouseServiceGrpc.getUploadImageMethod) == null) {
+          HouseServiceGrpc.getUploadImageMethod = getUploadImageMethod =
               io.grpc.MethodDescriptor.<com.example.UploadImageRequest, com.example.UploadImageResponse>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.CLIENT_STREAMING)
-              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "UploadIMage"))
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "UploadImage"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   com.example.UploadImageRequest.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   com.example.UploadImageResponse.getDefaultInstance()))
-              .setSchemaDescriptor(new HouseServiceMethodDescriptorSupplier("UploadIMage"))
+              .setSchemaDescriptor(new HouseServiceMethodDescriptorSupplier("UploadImage"))
               .build();
         }
       }
     }
-    return getUploadIMageMethod;
+    return getUploadImageMethod;
   }
 
   /**
@@ -189,9 +189,9 @@ public final class HouseServiceGrpc {
      *Client Side Streaming Grpc
      * </pre>
      */
-    public io.grpc.stub.StreamObserver<com.example.UploadImageRequest> uploadIMage(
+    public io.grpc.stub.StreamObserver<com.example.UploadImageRequest> uploadImage(
         io.grpc.stub.StreamObserver<com.example.UploadImageResponse> responseObserver) {
-      return io.grpc.stub.ServerCalls.asyncUnimplementedStreamingCall(getUploadIMageMethod(), responseObserver);
+      return io.grpc.stub.ServerCalls.asyncUnimplementedStreamingCall(getUploadImageMethod(), responseObserver);
     }
 
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
@@ -211,7 +211,7 @@ public final class HouseServiceGrpc {
                 com.example.SearchHouseResponse>(
                   this, METHODID_SEARCH_HOUSE)))
           .addMethod(
-            getUploadIMageMethod(),
+            getUploadImageMethod(),
             io.grpc.stub.ServerCalls.asyncClientStreamingCall(
               new MethodHandlers<
                 com.example.UploadImageRequest,
@@ -266,10 +266,10 @@ public final class HouseServiceGrpc {
      *Client Side Streaming Grpc
      * </pre>
      */
-    public io.grpc.stub.StreamObserver<com.example.UploadImageRequest> uploadIMage(
+    public io.grpc.stub.StreamObserver<com.example.UploadImageRequest> uploadImage(
         io.grpc.stub.StreamObserver<com.example.UploadImageResponse> responseObserver) {
       return io.grpc.stub.ClientCalls.asyncClientStreamingCall(
-          getChannel().newCall(getUploadIMageMethod(), getCallOptions()), responseObserver);
+          getChannel().newCall(getUploadImageMethod(), getCallOptions()), responseObserver);
     }
   }
 
@@ -383,7 +383,7 @@ public final class HouseServiceGrpc {
         io.grpc.stub.StreamObserver<Resp> responseObserver) {
       switch (methodId) {
         case METHODID_UPLOAD_IMAGE:
-          return (io.grpc.stub.StreamObserver<Req>) serviceImpl.uploadIMage(
+          return (io.grpc.stub.StreamObserver<Req>) serviceImpl.uploadImage(
               (io.grpc.stub.StreamObserver<com.example.UploadImageResponse>) responseObserver);
         default:
           throw new AssertionError();
@@ -438,7 +438,7 @@ public final class HouseServiceGrpc {
               .setSchemaDescriptor(new HouseServiceFileDescriptorSupplier())
               .addMethod(getCreateHouseMethod())
               .addMethod(getSearchHouseMethod())
-              .addMethod(getUploadIMageMethod())
+              .addMethod(getUploadImageMethod())
               .build();
         }
       }

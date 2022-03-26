@@ -74,7 +74,7 @@ public final class HouseServiceOuterClass {
       "quest\032\035.untitled.CreateHouseResponse\"\000\022N" +
       "\n\013SearchHouse\022\034.untitled.SearchHouseRequ" +
       "est\032\035.untitled.SearchHouseResponse\"\0000\001\022N" +
-      "\n\013UploadIMage\022\034.untitled.UploadImageRequ" +
+      "\n\013UploadImage\022\034.untitled.UploadImageRequ" +
       "est\032\035.untitled.UploadImageResponse\"\000(\001B\023" +
       "\n\013com.exampleP\001Z\002pbb\006proto3"
     };

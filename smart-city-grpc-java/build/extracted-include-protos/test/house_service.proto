@@ -44,5 +44,5 @@ service HouseService {
   //Server Side streaming Grpc
   rpc SearchHouse(SearchHouseRequest) returns (stream SearchHouseResponse){};
   //Client Side Streaming Grpc
-  rpc UploadIMage(stream UploadImageRequest) returns (UploadImageResponse) {};
+  rpc UploadImage(stream UploadImageRequest) returns (UploadImageResponse) {};
 }
