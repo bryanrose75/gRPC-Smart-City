@@ -1,0 +1,48 @@
+﻿<Properties StartupConfiguration="Server">
+  <MonoDevelop.Ide.ItemProperties.GrpcClient PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="GrpcClient/Program.cs">
+    <Files>
+      <File FileName="smart-city-grpc-cs/smart-city-grpc-cs.csproj" Line="14" Column="7" />
+      <File FileName="GrpcClient/GrpcClient.csproj" Line="24" Column="67" />
+      <File FileName="GrpcClient/Program.cs" Line="26" Column="58" />
+      <File FileName="smart-city-grpc-cs/Program.cs" Line="27" Column="17" />
+      <File FileName="GrpcClient/Protos/streamer.proto" Line="1" Column="1" />
+      <File FileName="smart-city-grpc-cs/Startup.cs" Line="1" Column="1" />
+      <File FileName="smart-city-grpc-cs/Services/MessageStreamService.cs" Line="45" Column="136" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="smart-city-grpc-cs" expanded="True">
+            <Node name="GrpcClient" expanded="True">
+              <Node name="Protos" expanded="True" />
+            </Node>
+            <Node name="GrpcStreaming" expanded="True">
+              <Node name="Services" expanded="True">
+                <Node name="MessageStreamService.cs" selected="True" />
+              </Node>
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+      <Pad Id="MonoDevelop.Debugger.WatchPad">
+        <State />
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.ItemProperties.GrpcStreaming PreferredExecutionTarget="/Applications/Google Chrome.app" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <Debugger.DebugSourceFolders />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations>
+    <MultiItemSolutionRunConfiguration Id="Server" Name="Server">
+      <Items>
+        <StartupItem ItemId="{4962C95D-65A0-4DD4-BF76-D3D157279384}" ItemName="GrpcClient" ConfigurationId="Default" />
+        <StartupItem ItemId="{582E442A-23F3-48E3-91EA-3DC3EC846EA4}" ItemName="GrpcStreaming" ConfigurationId="smart-city-grpc-cs" />
+      </Items>
+    </MultiItemSolutionRunConfiguration>
+  </MultiItemStartupConfigurations>
+</Properties>

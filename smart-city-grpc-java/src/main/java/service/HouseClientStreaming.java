@@ -165,6 +165,7 @@ public void uploadImage(String houseID, String imagePath) throws InterruptedExce
         Generator generator = new Generator();
 
         try {
+
             //Test the uplaod image path
             House house = generator.NewHouse();
             client.createHouse(house);

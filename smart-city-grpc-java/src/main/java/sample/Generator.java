@@ -31,12 +31,7 @@ public class Generator {
                 .setId(UUID.randomUUID().toString())
                 .setDistrict(district)
                 .setEnergyUsed(energy_used)
-//                .setPriceUsd(priceUsd)
-                  .setDublinArea(dublinArea)
-//                .setWeightKg(residenceAmount())
-//                .setMonthlySpendEURO(monthlySpendEURO())
-//                .setMonthlySpendEURO(monthlySpendEURO)
-//                .setReleaseYear(yearJoinedSmartCity)
+                .setDublinArea(dublinArea)
                 .setUpdatedAt(timestampNow())
 
                 .build();
@@ -61,7 +56,7 @@ public class Generator {
             case "2":
                 return randomStringFromSet("Latitude", "Vostro", "XPS", "Alienware");
             case "3":
-                return randomStringFromSet("Macbook Air", "Macbook Pro");
+                return randomStringFromSet("", "Macbook Pro");
             case "4":
                 return randomStringFromSet("Latitude", "Vostro", "XPS", "Alienware");
             case "5":

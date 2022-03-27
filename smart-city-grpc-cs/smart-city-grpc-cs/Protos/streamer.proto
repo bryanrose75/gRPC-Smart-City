@@ -1,0 +1,13 @@
+﻿syntax = "proto3";
+
+option csharp_namespace = "smartcitygrpccs.Protos";
+package GrpcStreaming;
+
+service StreamService{
+    rpc StartStreaming(stream .GrpcStreaming.StreamMessage) returns (stream .GrpcStreaming.StreamMessage);
+}
+
+message StreamMessage{
+    string username=1;
+    string message=2;
+}

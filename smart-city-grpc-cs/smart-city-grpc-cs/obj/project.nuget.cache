@@ -1,0 +1,32 @@
+{
+  "version": 2,
+  "dgSpecHash": "ZJsuyKmux5x2dLXS6eSw1YP6OGsXyQDUfQS/Gtv5AocXAGx6sEO6hV/IrDW9zG4wlD0Cu7TVVaw5jouJQnhKnA==",
+  "success": true,
+  "projectFilePath": "/Users/bryan/Documents/4thYear/DistributedSystems/DS-Project/gRPC-Smart-City/smart-city-grpc-cs/smart-city-grpc-cs/GrpcStreaming.csproj",
+  "expectedPackageFiles": [
+    "/Users/bryan/.nuget/packages/google.protobuf/3.19.2/google.protobuf.3.19.2.nupkg.sha512",
+    "/Users/bryan/.nuget/packages/grpc.aspnetcore/2.44.0/grpc.aspnetcore.2.44.0.nupkg.sha512",
+    "/Users/bryan/.nuget/packages/grpc.aspnetcore.server/2.44.0/grpc.aspnetcore.server.2.44.0.nupkg.sha512",
+    "/Users/bryan/.nuget/packages/grpc.aspnetcore.server.clientfactory/2.44.0/grpc.aspnetcore.server.clientfactory.2.44.0.nupkg.sha512",
+    "/Users/bryan/.nuget/packages/grpc.core.api/2.44.0/grpc.core.api.2.44.0.nupkg.sha512",
+    "/Users/bryan/.nuget/packages/grpc.net.client/2.44.0/grpc.net.client.2.44.0.nupkg.sha512",
+    "/Users/bryan/.nuget/packages/grpc.net.clientfactory/2.44.0/grpc.net.clientfactory.2.44.0.nupkg.sha512",
+    "/Users/bryan/.nuget/packages/grpc.net.common/2.44.0/grpc.net.common.2.44.0.nupkg.sha512",
+    "/Users/bryan/.nuget/packages/grpc.tools/2.44.0/grpc.tools.2.44.0.nupkg.sha512",
+    "/Users/bryan/.nuget/packages/microsoft.aspnetcore.http.abstractions/2.2.0/microsoft.aspnetcore.http.abstractions.2.2.0.nupkg.sha512",
+    "/Users/bryan/.nuget/packages/microsoft.aspnetcore.http.features/2.2.0/microsoft.aspnetcore.http.features.2.2.0.nupkg.sha512",
+    "/Users/bryan/.nuget/packages/microsoft.extensions.configuration/3.0.3/microsoft.extensions.configuration.3.0.3.nupkg.sha512",
+    "/Users/bryan/.nuget/packages/microsoft.extensions.configuration.abstractions/3.0.3/microsoft.extensions.configuration.abstractions.3.0.3.nupkg.sha512",
+    "/Users/bryan/.nuget/packages/microsoft.extensions.configuration.binder/3.0.3/microsoft.extensions.configuration.binder.3.0.3.nupkg.sha512",
+    "/Users/bryan/.nuget/packages/microsoft.extensions.dependencyinjection/3.0.3/microsoft.extensions.dependencyinjection.3.0.3.nupkg.sha512",
+    "/Users/bryan/.nuget/packages/microsoft.extensions.dependencyinjection.abstractions/3.0.3/microsoft.extensions.dependencyinjection.abstractions.3.0.3.nupkg.sha512",
+    "/Users/bryan/.nuget/packages/microsoft.extensions.http/3.0.3/microsoft.extensions.http.3.0.3.nupkg.sha512",
+    "/Users/bryan/.nuget/packages/microsoft.extensions.logging/3.0.3/microsoft.extensions.logging.3.0.3.nupkg.sha512",
+    "/Users/bryan/.nuget/packages/microsoft.extensions.logging.abstractions/3.0.3/microsoft.extensions.logging.abstractions.3.0.3.nupkg.sha512",
+    "/Users/bryan/.nuget/packages/microsoft.extensions.options/3.0.3/microsoft.extensions.options.3.0.3.nupkg.sha512",
+    "/Users/bryan/.nuget/packages/microsoft.extensions.primitives/3.0.3/microsoft.extensions.primitives.3.0.3.nupkg.sha512",
+    "/Users/bryan/.nuget/packages/system.memory/4.5.3/system.memory.4.5.3.nupkg.sha512",
+    "/Users/bryan/.nuget/packages/system.text.encodings.web/4.5.0/system.text.encodings.web.4.5.0.nupkg.sha512"
+  ],
+  "logs": []
+}

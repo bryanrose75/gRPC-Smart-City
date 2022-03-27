@@ -1,0 +1,73 @@
+{
+  "format": 1,
+  "restore": {
+    "/Users/bryan/Documents/4thYear/DistributedSystems/DS-Project/gRPC-Smart-City/smart-city-grpc-cs/smart-city-grpc-cs/smart-city-grpc-cs.csproj": {}
+  },
+  "projects": {
+    "/Users/bryan/Documents/4thYear/DistributedSystems/DS-Project/gRPC-Smart-City/smart-city-grpc-cs/smart-city-grpc-cs/smart-city-grpc-cs.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/bryan/Documents/4thYear/DistributedSystems/DS-Project/gRPC-Smart-City/smart-city-grpc-cs/smart-city-grpc-cs/smart-city-grpc-cs.csproj",
+        "projectName": "smart-city-grpc-cs",
+        "projectPath": "/Users/bryan/Documents/4thYear/DistributedSystems/DS-Project/gRPC-Smart-City/smart-city-grpc-cs/smart-city-grpc-cs/smart-city-grpc-cs.csproj",
+        "packagesPath": "/Users/bryan/.nuget/packages/",
+        "outputPath": "/Users/bryan/Documents/4thYear/DistributedSystems/DS-Project/gRPC-Smart-City/smart-city-grpc-cs/smart-city-grpc-cs/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/bryan/.config/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "dependencies": {
+            "Grpc.AspNetCore": {
+              "target": "Package",
+              "version": "[2.44.0, )"
+            },
+            "Microsoft.AspNetCore.Http.Abstractions": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/5.0.302/RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}
