@@ -7,6 +7,7 @@ import io.grpc.Status;
 import io.grpc.StatusRuntimeException;
 import sample.Generator;
 
+import javax.swing.*;
 import java.util.concurrent.TimeUnit;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -57,22 +58,26 @@ public class HouseClientUnary {
             return;
         }
         //Create an info log to return the House ID
-        logger.info("House Created SmartCity network with ID: " + response.getId());
+        logger.info("House Created with ID: " + response.getId());
+        String houseID = response.getId();
     }
 
 //Unary House client
 
     public static void main(String[] args) throws InterruptedException {
+
         //create a new client that connects to port 8080
         HouseClientServerStreaming client = new HouseClientServerStreaming("0.0.0.0", 8080);
 
         Generator generator = new Generator();
         House house = generator.NewHouse().toBuilder().setId("").build();
 
-        try {
 
+        try {
             client.createHouse(house);
-        } finally {
+            JOptionPane.showMessageDialog(null, "House Created:\n " + house);
+        }
+        finally {
             client.shutdown();
         }
     }

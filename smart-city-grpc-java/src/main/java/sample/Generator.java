@@ -19,108 +19,103 @@ public class Generator {
         String district = randomHouseDistrict();
         String dublinArea = randomHouseArea(district);
 
-        double residenceAmount = randomDouble(1, 10);
-        double monthlySpendEURO = randomDouble(100, 2000);
+  //      double residenceAmount = randomDouble(1, 10);
+  //      double monthlySpendEURO = randomDouble(100, 2000);
 
         double energy_used = randomDouble(10, 1000);
-        double priceUsd = randomDouble(1500, 3500);
+  //      double priceUsd = randomDouble(1500, 3500);
 
-        int yearJoinedSmartCity = randomInt(2000, 2022);
+  //     int yearJoinedSmartCity = randomInt(2000, 2022);
 
         return House.newBuilder()
                 .setId(UUID.randomUUID().toString())
                 .setDistrict(district)
                 .setEnergyUsed(energy_used)
                 .setDublinArea(dublinArea)
-                .setUpdatedAt(timestampNow())
+                //.setUpdatedAt(timestampNow())
 
                 .build();
     }
 
-    public double NewHouseEnergyUsage() {
-        return randomInt(1, 10);
-    }
+//    public double NewHouseEnergyUsage() {
+//        return randomInt(1, 10);
+//    }
 
-    private Timestamp timestampNow() {
-        Instant now = Instant.now();
-        return Timestamp.newBuilder()
-                .setSeconds(now.getEpochSecond())
-                .setNanos(now.getNano())
-                .build();
-    }
+//    private Timestamp timestampNow() {
+//        Instant now = Instant.now();
+//        return Timestamp.newBuilder()
+//                .setSeconds(now.getEpochSecond())
+//                .build();
+//    }
 
     private String randomHouseArea(String dublinArea) {
         switch (dublinArea) {
             case "1":
-                return randomStringFromSet("Macbook Air", "Macbook Pro");
+                return randomStringFromSet("Abbey St.", "Amiens St.", "Capel St.", "Mountjoy Sq.");
             case "2":
-                return randomStringFromSet("Latitude", "Vostro", "XPS", "Alienware");
+                return randomStringFromSet("Dawson St.", "Fitzwilliam Sq.", "Harcourt St.", "Pearse St.");
             case "3":
-                return randomStringFromSet("", "Macbook Pro");
+                return randomStringFromSet("Fairview", "Marino");
             case "4":
-                return randomStringFromSet("Latitude", "Vostro", "XPS", "Alienware");
+                return randomStringFromSet("Sandymount", "Ringsend", "Donnybrook", "Ballsbridge");
             case "5":
-                return randomStringFromSet("Macbook Air", "Macbook Pro");
+                return randomStringFromSet("Raheny", "Hamonstown");
             case "6":
-                return randomStringFromSet("Latitude", "Vostro", "XPS", "Alienware");
+                return randomStringFromSet("Darty", "Rathgar", "Raneleigh", "Sandford");
             case "7":
-                return randomStringFromSet("Macbook Air", "Macbook Pro");
+                return randomStringFromSet("Four Courts", "Cabra");
             case "8":
-                return randomStringFromSet("Latitude", "Vostro", "XPS", "Alienware");
+                return randomStringFromSet("", "Portobello", "Island Bridge", "Inchicore");
             case "9":
-                return randomStringFromSet("Macbook Air", "Macbook Pro");
+                return randomStringFromSet(" Beaumont", "Drumcondra");
             case "10":
-                return randomStringFromSet("Latitude", "Vostro", "XPS", "Alienware");
+                return randomStringFromSet("Ballyfermont");
             case "11":
-                return randomStringFromSet("Macbook Air", "Macbook Pro");
+                return randomStringFromSet("BallyGall", "Dubber");
             case "12":
-                return randomStringFromSet("Latitude", "Vostro", "XPS", "Alienware");
+                return randomStringFromSet("Bluebell", "Crumlin", "Walkinstown");
             case "13":
-                return randomStringFromSet("Macbook Air", "Macbook Pro");
+                return randomStringFromSet("Howth", "Sutton");
             case "14":
-                return randomStringFromSet("Latitude", "Vostro", "XPS", "Alienware");
+                return randomStringFromSet("Dundrum", "Goatstown", "Churchtown", "Roebuck");
             case "16":
-                return randomStringFromSet("Macbook Air", "Macbook Pro");
+                return randomStringFromSet("Ballinteer", "Knoclyon");
             case "17":
-                return randomStringFromSet("Latitude", "Vostro", "XPS", "Alienware");
+                return randomStringFromSet("Belcamp", "Balgriffin", "Priorswood", "Darndale");
             case "18":
-                return randomStringFromSet("Macbook Air", "Macbook Pro");
-            case "19":
-                return randomStringFromSet("Latitude", "Vostro", "XPS", "Alienware");
+                return randomStringFromSet("Cabinteely", "Foxrock");
+            case "15":
+                return randomStringFromSet("Blanchardstown", "Clonee", "Corduff", "Clonsilla");
             case "20":
-                return randomStringFromSet("Macbook Air", "Macbook Pro");
-            case "21":
-                return randomStringFromSet("Latitude", "Vostro", "XPS", "Alienware");
+                return randomStringFromSet("Chapelizod", "Palmerstown");
             case "22":
-                return randomStringFromSet("Macbook Air", "Macbook Pro");
-            case "23":
-                return randomStringFromSet("Latitude", "Vostro", "XPS", "Alienware");
+                return randomStringFromSet("Bawnogue", "Neilstown");
             case "24":
-                return randomStringFromSet("Macbook Air", "Macbook Pro");
+                return randomStringFromSet("Jobstown", "Tallaght");
             default:
-                return randomStringFromSet("Thinkpad X1", "Thinkpad P1", "Thinkpad P53");
+                return randomStringFromSet("No Area");
         }
     }
 
     private String randomHouseDistrict() {
         return randomStringFromSet("1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11"
-                , "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23"
+                , "12", "13", "14", "15", "16", "17", "18", "19", "20", "22"
                 , "24");
     }
 
 
-    private float randomFloat(float min, float max) {
-        return min + rand.nextFloat() * (max - min);
-    }
+//    private float randomFloat(float min, float max) {
+//        return min + rand.nextFloat() * (max - min);
+//    }
 
 
     private double randomDouble(double min, double max) {
         return min + rand.nextDouble() * (max - min);
     }
 
-    private int randomInt(int min, int max) {
-        return min + rand.nextInt(max - min + 1);
-    }
+//    private int randomInt(int min, int max) {
+//        return min + rand.nextInt(max - min + 1);
+//    }
 
 
     private String randomStringFromSet(String... a) {

@@ -7,6 +7,7 @@ import io.grpc.Status;
 import io.grpc.StatusRuntimeException;
 import sample.Generator;
 
+import javax.swing.*;
 import java.util.Iterator;
 import java.util.concurrent.TimeUnit;
 import java.util.logging.Level;
@@ -106,7 +107,7 @@ public class HouseClientServerStreaming {
                     .build();
 
             client.SearchHouse(filter);
-
+            JOptionPane.showMessageDialog(null, "House Created:\n " );
         } finally {
             client.shutdown();
         }

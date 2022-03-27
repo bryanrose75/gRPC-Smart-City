@@ -62,6 +62,9 @@ public class HouseServer {
 
     //Create the main function
     public static void main(String[] args) throws InterruptedException, IOException {
+
+        JOptionPane.showMessageDialog(null, "INFO: server started on port: 8080" );
+
         InMemoryHouseStore houseStore = new InMemoryHouseStore();
         DiskImageStore imageStore = new DiskImageStore("img");
 
@@ -70,7 +73,6 @@ public class HouseServer {
         server.start(); // call this function to start the server
         server.blockUntilShutdown();
 
-        JOptionPane.showMessageDialog(null, "Message" );
 
     }
 }
